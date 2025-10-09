@@ -1,0 +1,225 @@
+syntax = "proto3";
+
+option csharp_namespace = "LoteTablas.Core.Service.Definition";
+
+package LoteTablas;
+
+// The LoteTablas.Core Service Definition.
+service Core {
+  
+
+// Lottery
+
+  rpc GetLotteriesByUserId (UserIdRequest) returns (LotteriesReply);
+
+  rpc GetLotteriesByLotteryType (LotteryTypeIDRequest) returns (LotteriesReply);
+
+  rpc GetFreeLotteries (EmptyRequest) returns (LotteriesReply);
+
+  rpc GetLottery (LotteryIDRequest) returns (LotteryModel);
+
+  rpc GetLotteryTypes (EmptyRequest) returns (LotteryTypesReply);
+  
+  rpc GetLotteryCardsByLotteryID (LotteryIDRequest) returns (LotteryCardsReply);
+
+// Cards
+
+  rpc GetCard (GetCardRequest) returns (CardModel);
+  
+  rpc GetCards (GetCardsRequest) returns (CardsReply);
+
+
+  // Board
+
+  rpc GetBoardSizes (EmptyRequest) returns (BoardSizesReply);
+  
+  rpc SaveBoard (SaveBoardRequest) returns (BoardModel);
+  
+  rpc DeleteBoard (DeleteBoardRequest) returns (SuccessReply);
+
+  rpc GetBoardsByUserID (UserIDRequest) returns (GetBoardsByUserIDReply);
+
+  rpc GetFullBoardByBoardID (BoardIDRequest) returns (BoardModel);
+
+  rpc SaveBoardCards (SaveBoardCardsRequest) returns (SuccessReply);
+
+  rpc GetBoardDocumentStream(BoardDocumentRequest) returns (stream Chunk) {}
+
+  rpc GetBoardDocumentsStream(BoardDocumentsRequest) returns (stream Chunk) {}
+
+
+  // Generates 4X4 board documents for the user
+  rpc GetUserBoardsLiteDocumentStream(UserBoardsLiteDocumentRequest) returns (stream Chunk) {}
+
+}
+
+message EmptyRequest {}
+
+message SuccessReply {
+	bool success = 1;
+}
+
+message LotteryCardsReply {
+	repeated LotteryCardModel lotteryCards = 1;
+}
+
+message LotteryCardModel {
+	int32 cardID  = 1;
+	string name = 2;
+	string description = 3;
+	string imageSmallPath = 4;
+	string imageMediumPath = 5;
+	string imageBigPath = 6;
+	int32 ordinal = 7;
+}
+
+message LotteryTypesReply {
+	repeated LotteryTypeModel lotteryTypes = 1;
+}
+
+message LotteryTypeModel {
+	int32  lotteryTypeID = 1;
+	string name = 2;
+	string description = 3;
+	string code = 4;
+}
+
+message LotteryIDRequest {
+	int32 lotteryID = 1;
+}
+
+message LotteryTypeIDRequest {
+	int32 lotteryTypeID = 1;
+}
+
+message UserIdRequest {
+  int32 userID = 1;
+}
+
+// The response message containing the greetings.
+message LotteriesReply {
+  repeated LotteryModel lotteries = 1;
+}
+
+message LotteryModel {
+	int32 lotteryID  = 1;
+	string name  = 2;
+	string description = 3;
+	int32 lotteryTypeID = 4;
+	string lotteryType = 5;
+	int32 ownerUserID = 6;
+}
+
+
+message GetCardRequest {
+	int32 cardID = 1;
+	
+}
+
+message GetCardsRequest {
+	repeated int32 cardIDs = 1;
+}
+
+
+message CardsReply {
+	repeated CardModel cards = 1;
+}
+
+message CardModel {
+  int32 cardID = 1;
+  string name = 2;
+  string description = 3;
+  string imageSmallPath = 4;
+  string imageMediumPath = 5;
+  string imageBigPath = 6;
+  int32 creatorUserID = 7;
+}
+
+
+message UserIDRequest {
+	int32 userID = 1;
+}
+
+message BoardIDRequest {
+	int32 boardID = 1;
+}
+
+message BoardSizesReply {
+  repeated BoardSizeModel boardSizes = 1;
+}
+
+message BoardSizeModel {
+	int32 boardSizeID = 1;
+	string code = 2;
+	int32 xSize = 3;
+	int32 ySize = 4;
+}
+
+message SaveBoardRequest {
+	string name = 1;
+	int32 boardSizeId = 2;
+	int32 lotteryID = 3;
+	int32 ownerUserID = 4;
+}
+
+message SaveBoardCardsRequest {
+	int32 boardID = 1;
+	repeated BoardCardModel boardCards = 2;
+}
+
+message DeleteBoardRequest {
+	int32 boardID = 1;
+}
+
+message GetBoardsByUserIDReply	{
+	repeated BoardModel boards = 1;
+}
+
+message BoardModel {
+	int32 boardID = 1;
+	string name = 2;
+	int32 boardSizeID = 3;
+	int32 lotteryID = 4;
+	string fileUrl = 5;
+	int32 ownerUserID = 6;
+	repeated BoardCardModel boardCards = 7;
+}
+
+message BoardCardModel {
+	int32 cardID = 1;
+	int32 ordinal = 2;
+	string name = 3;
+	string description = 4;
+	string imageSmallPath = 5;
+	string imageMediumPath = 6;
+	string imageBigPath = 7;
+	int32 creatorUserID = 8;
+}
+
+
+message BoardDocumentRequest {
+  int32 boardID = 1; 
+}
+
+message BoardDocumentsRequest {
+	repeated int32 boardIDs = 1;
+}
+
+message UserBoardsLiteDocumentRequest {
+	repeated BoardLiteModel userBoards = 1;
+}
+
+message BoardLiteModel {
+	int32 boardID = 1;
+	repeated BoardCardLiteModel boardCards = 2;
+}
+
+message BoardCardLiteModel {
+	int32 cardID = 1;
+	int32 ordinal = 2;
+}
+
+message Chunk 
+{
+	bytes data = 1;
+}

@@ -1,0 +1,40 @@
+﻿<div class="row my-4">
+    <div class="col-12">
+        <h3>Paso #2: Agrega tus cartas</h3>
+    </div>
+</div>
+
+<div class="row my-5 align-items-center justify-content-center">
+    <div class="col-auto">
+        <Button Color="ButtonColor.Warning" @onclick="CleanBoard">
+            Limpiar
+        </Button>
+    </div>
+
+    <div class="col-auto">
+        <Button Color="ButtonColor.Success" @onclick="AddRandomCards">Agrega al azar</Button>
+    </div>
+</div>
+
+<div class="row my-4">
+    <div class="col-12">
+        <small>Selecciona la casilla para seleccionar tus cartas</small>
+    </div>
+</div>
+
+<div class="row my-4 align-items-center justify-content-center">
+    <div class="col-auto">
+        <BoardBuilderComponent LotteryCards="LotteryCards" CurrentBoard="CurrentBoard" SelectCardModal="SelectCardModal" OnCardSelected="OnCardSelected" />
+    </div>
+</div>
+
+<div class="row my-5 align-items-center justify-content-center">
+    
+    <div class="col-auto">
+        <Button Color="ButtonColor.Warning" @onclick="@(() => OnBack.InvokeAsync())">Atras</Button>
+    </div>
+
+    <div class="col-auto">
+        <Button Color="ButtonColor.Success" Disabled="!IsBoardCompleted" @onclick="() => OnAddCardsCompleted.InvokeAsync(CurrentBoard)">Siguiente</Button>
+    </div>
+</div>

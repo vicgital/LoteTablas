@@ -1,0 +1,73 @@
+﻿
+<div class="row my-4">
+    <div class="col-12">
+        <h3>Paso #1: Escoge tu carta doble</h3>
+    </div>
+</div>
+
+<div class="row form-group my-5 align-items-center justify-content-center">
+    <label class="col-auto col-form-label">Quieres tu carta doble? </label>
+
+    <div class="col-auto">
+
+        <select class="form-select" @bind="HasDoubleCardValue">
+            <option value="1">Si</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+</div>
+
+@if (HasDoubleCard)
+{
+    <Animate OptionsName="fadeIn">
+        <div class="row form-group my-5 align-items-center justify-content-center">
+            <label class="col-auto col-form-label">Escoge tu carta doble</label>
+
+            <div class="col-auto">
+                <Button Color="ButtonColor.Primary" @onclick="ShowSelectCardModal">Selecciona</Button>
+            </div>
+
+        </div>
+
+        @if (CardSelected != null)
+        {
+            <Animate OptionsName="fadeIn">
+
+                <div class="row form-group my-5 align-items-center justify-content-center">
+                    <div class="col-auto">
+                        <img class="mb-4" src="@CardSelected.ImageSmallPath" alt="Alternate Text" />
+                        <small class="d-block mb-2">Donde quieres tu doble?</small>
+                        <small class="d-block mb-2">Selecciona 2 casillas</small>
+                    </div>
+
+                    <div class="col-auto">
+
+                        <SelectDoubleCardComponent DoubleCardPosition="Tuple.Create<int,int>(DoubleCardPosition1,DoubleCardPosition2)"
+                                                   ImageUrl="@CardSelected.ImageSmallPath"
+                                                   OnDoubleCardSelected="SelectDoubleCardPosition" />
+
+                    </div>
+                </div>
+            </Animate>
+
+        }
+
+    </Animate>
+}
+
+
+
+<div class="row my-5 align-items-center justify-content-center">
+    @if (HasDoubleCard)
+    {
+
+        <div class="col-auto">
+            <Button Color="@ButtonColor.Warning" @onclick="Reset">Resetear</Button>
+        </div>
+
+    }
+    <div class="col-auto">
+        <Button Color="@(CanContinue ?  ButtonColor.Success : ButtonColor.Secondary)" Disabled="!CanContinue" @onclick="SelectDoubleCardComplete">Siguiente</Button>
+    </div>
+</div>
+

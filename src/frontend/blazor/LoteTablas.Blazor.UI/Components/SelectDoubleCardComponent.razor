@@ -1,0 +1,25 @@
+﻿<table class="board-table m-4">
+
+    @{
+        int i = 0;
+    }
+    @for (int y = 1; y <= 4; y++)
+    {
+        <tr>
+
+            @for (int x = 1; x <= 4; x++)
+            {
+                i++;
+                var ordinal = i;
+
+                <td class="board-cell board-cell-sm" @onclick="() => SelectDoubleCardPosition(ordinal)">
+                    @if (DoubleCardPosition.Item1 == ordinal || DoubleCardPosition.Item2 == ordinal)
+                    {
+                        <img src="@(ImageUrl)" />
+                    }
+                </td>
+            }
+        </tr>
+    }
+
+</table>

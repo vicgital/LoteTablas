@@ -1,0 +1,17 @@
+﻿.img-card {
+    display: inline-flex;
+    border: 1px solid black;
+}
+
+.img-card:hover {
+    background-color: #000000a4;
+    cursor: pointer;
+}
+
+
+img {
+    height: 120px;
+    width: 80px;
+    margin: 2px;
+    padding:0px;
+}

@@ -1,0 +1,46 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<p>Conteo Actual: @UserBoards.Count</p>
+@switch (CurrentStep)
+{
+    case Enums.CreateBoardStep.Start:
+        <div class="row my-3">
+            <div class="col-md-12">
+                <p>Crea tus tablas de loteria mexicana en 3 pasos</p>
+                <p>Puedes crear hasta 4 tablas</p>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12 text-center">
+                <Button Color="ButtonColor.Primary" @onclick="Start" Disabled="LotteryCards.Count == 0">Comenzar</Button>
+            </div>
+        </div>
+        break;
+    case Enums.CreateBoardStep.SelectDouble:
+        <Animate OptionsName="fadeIn">
+            <SelectDoubleStepComponent LotteryCards="LotteryCards" CurrentBoard="CurrentBoard" SelectCardModal="SelectCardModal" OnSelectDoubleCardCompleted="SelectDoubleCardCompleted" />
+        </Animate>
+        break;
+    case Enums.CreateBoardStep.AddCards:
+        <Animate OptionsName="fadeIn">
+            <AddCardsStepComponent LotteryCards="LotteryCards" CurrentBoard="CurrentBoard" SelectCardModal="SelectCardModal" OnBack="Back" OnAddCardsCompleted="AddCardsCompleted" />
+        </Animate>
+        break;
+    case Enums.CreateBoardStep.DownloadBoards:
+        <Animate OptionsName="fadeIn">
+            <DownloadBoardsStepComponent LotteryCards="LotteryCards" UserBoards="UserBoards" OnAddNewBoard="AddNewBoard" OnEditBoard="EditBoard" OnDeleteBoard="DeleteBoard" OnDownloadBoards="DownloadBoards" />
+        </Animate>
+        break;
+    default:
+        break;
+}
+
+<Toasts class="p-3" Messages="ToastMessages" AutoHide="true" Delay="2000" Placement="ToastsPlacement.BottomRight" />
+
+<Modal @ref="SelectCardModal"
+       UseStaticBackdrop="true"
+       CloseOnEscape="true"
+       IsScrollable="true"
+       Size="ModalSize.Large" />

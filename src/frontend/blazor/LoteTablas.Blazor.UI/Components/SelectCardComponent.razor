@@ -1,0 +1,14 @@
+﻿<div>
+
+    @if (LotteryCards != null && LotteryCards.Count > 1)
+    {
+        @foreach (var card in LotteryCards)
+        {
+            <div class="img-card">
+                <img src="@(card.ImageSmallPath)" @onclick="() => OnCardSelected.InvokeAsync(card)" />
+            </div>
+            
+        }
+    }
+
+</div>

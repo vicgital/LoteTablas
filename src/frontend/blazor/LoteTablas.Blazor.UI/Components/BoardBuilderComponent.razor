@@ -1,0 +1,52 @@
+﻿@using System.Linq;
+
+<table class="board-table m-4">
+
+    @{
+        int i = 0;
+    }
+    @for (int y = 1; y <= 4; y++)
+    {
+        <tr>
+
+            @for (int x = 1; x <= 4; x++)
+            {
+                i++;
+                var boardCard = CurrentBoard.BoardCards.FirstOrDefault(e => e.Ordinal == i);
+                var ordinal = i;
+                @if (boardCard != null)
+                {
+                    var lotteryCard = LotteryCards.FirstOrDefault(e => e.CardID == boardCard.CardID);
+                    if (lotteryCard != null)
+                    {
+                        if (lotteryCard.CardID == CurrentBoard.DoubleCardId)
+                        {
+                            <td class="board-cell board-cell-md board-cell-double">
+                                <img src="@(lotteryCard.ImageSmallPath)" />
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="board-cell board-cell-md" @onclick="() => ShowSelectCardModal(ordinal)">
+                                <img src="@(lotteryCard.ImageSmallPath)" />
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        <td class="board-cell board-cell-md" @onclick="() => ShowSelectCardModal(ordinal)"></td>
+                    }
+
+                }
+                else
+                {
+                    <td class="board-cell board-cell-md" @onclick="() => ShowSelectCardModal(ordinal)"></td>
+                }
+            }
+
+
+
+        </tr>
+    }
+
+</table>

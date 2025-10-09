@@ -1,0 +1,488 @@
+[
+  {
+    "cardID": 1,
+    "name": "El Gallo",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/1_el_gallo_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/1_el_gallo_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/1_el_gallo_bg.jpg",
+    "ordinal": 1
+  },
+  {
+    "cardID": 2,
+    "name": "El Diablito",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/2_el_diablito_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/2_el_diablito_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/2_el_diablito_bg.jpg",
+    "ordinal": 2
+  },
+  {
+    "cardID": 3,
+    "name": "La Dama",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/3_la_dama_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/3_la_dama_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/3_la_dama_bg.jpg",
+    "ordinal": 3
+  },
+  {
+    "cardID": 4,
+    "name": "El Catrin",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/4_el_catrin_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/4_el_catrin_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/4_el_catrin_bg.jpg",
+    "ordinal": 4
+  },
+  {
+    "cardID": 5,
+    "name": "El Paraguas",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/5_el_paraguas_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/5_el_paraguas_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/5_el_paraguas_bd.jpg",
+    "ordinal": 5
+  },
+  {
+    "cardID": 6,
+    "name": "La Sirena",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/6_la_sirena_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/6_la_sirena_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/6_la_sirena_bg.jpg",
+    "ordinal": 6
+  },
+  {
+    "cardID": 7,
+    "name": "La Escalera",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/7_la_escalera_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/7_la_escalera_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/7_la_escalera_bg.jpg",
+    "ordinal": 7
+  },
+  {
+    "cardID": 8,
+    "name": "La Botella",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/8_la_botella_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/8_la_botella_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/8_la_botella_bg.jpg",
+    "ordinal": 8
+  },
+  {
+    "cardID": 9,
+    "name": "El Barril",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/9_barril_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/9_barril_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/9_barril_bg.jpg",
+    "ordinal": 9
+  },
+  {
+    "cardID": 10,
+    "name": "El Arbol",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/10_arbol_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/10_arbol_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/10_arbol_bg.jpg",
+    "ordinal": 10
+  },
+  {
+    "cardID": 11,
+    "name": "El Melon",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/11_melon_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/11_melon_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/11_melon_bg.jpg",
+    "ordinal": 11
+  },
+  {
+    "cardID": 12,
+    "name": "El Valiente",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/12_el_valiente_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/12_el_valiente_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/12_el_valiente_bg.jpg",
+    "ordinal": 12
+  },
+  {
+    "cardID": 13,
+    "name": "El Gorrito",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/13_el_gorrito_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/13_el_gorrito_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/13_el_gorrito_bg.jpg",
+    "ordinal": 13
+  },
+  {
+    "cardID": 14,
+    "name": "La Muerte",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/14_la_muerte_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/14_la_muerte_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/14_la_muerte_bg.jpg",
+    "ordinal": 14
+  },
+  {
+    "cardID": 15,
+    "name": "La Pera",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/15_la_pera_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/15_la_pera_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/15_la_pera_bg.jpg",
+    "ordinal": 15
+  },
+  {
+    "cardID": 16,
+    "name": "La Bandera",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/16_la_bandera_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/16_la_bandera_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/16_la_bandera_bg.jpg",
+    "ordinal": 16
+  },
+  {
+    "cardID": 17,
+    "name": "El Bandolon",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/17_el_bandolon_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/17_el_bandolon_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/17_el_bandolon_bg.jpg",
+    "ordinal": 17
+  },
+  {
+    "cardID": 18,
+    "name": "El Violoncello",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/18_el_violoncello_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/18_el_violoncello_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/18_el_violoncello_bg.jpg",
+    "ordinal": 18
+  },
+  {
+    "cardID": 19,
+    "name": "La Garza",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/19_la_garza_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/19_la_garza_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/19_la_garza_bg.jpg",
+    "ordinal": 19
+  },
+  {
+    "cardID": 20,
+    "name": "El Pajaro",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/20_el_pajaro_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/20_el_pajaro_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/20_el_pajaro_bg.jpg",
+    "ordinal": 20
+  },
+  {
+    "cardID": 21,
+    "name": "La Mano",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/21_la_mano_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/21_la_mano_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/21_la_mano_bg.jpg",
+    "ordinal": 21
+  },
+  {
+    "cardID": 22,
+    "name": "La Bota",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/22_la_bota_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/22_la_bota_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/22_la_bota_bg.jpg",
+    "ordinal": 22
+  },
+  {
+    "cardID": 23,
+    "name": "La Luna",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/23_la_luna_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/23_la_luna_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/23_la_luna_bg.jpg",
+    "ordinal": 23
+  },
+  {
+    "cardID": 24,
+    "name": "El Cotorro",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/24_el_cotorro_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/24_el_cotorro_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/24_el_cotorro_bg.jpg",
+    "ordinal": 24
+  },
+  {
+    "cardID": 25,
+    "name": "El Borracho",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/25_el_borracho_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/25_el_borracho_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/25_el_borracho_bg.jpg",
+    "ordinal": 25
+  },
+  {
+    "cardID": 26,
+    "name": "El Negrito",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/26_el_negrito_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/26_el_negrito_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/26_el_negrito_bg.jpg",
+    "ordinal": 26
+  },
+  {
+    "cardID": 27,
+    "name": "El Corazon",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/27_el_corazon_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/27_el_corazon_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/27_el_corazon_bg.jpg",
+    "ordinal": 27
+  },
+  {
+    "cardID": 28,
+    "name": "La Sandia",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/28_la_sandia_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/28_la_sandia_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/28_la_sandia_bg.jpg",
+    "ordinal": 28
+  },
+  {
+    "cardID": 29,
+    "name": "El Tambor",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/29_el_tambor_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/29_el_tambor_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/29_el_tambor_bg.jpg",
+    "ordinal": 29
+  },
+  {
+    "cardID": 30,
+    "name": "El Camaron",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/30_el_camaron_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/30_el_camaron_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/30_el_camaron_bg.jpg",
+    "ordinal": 30
+  },
+  {
+    "cardID": 31,
+    "name": "Las Jaras",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/31_las_jaras_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/31_las_jaras_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/31_las_jaras_bg.jpg",
+    "ordinal": 31
+  },
+  {
+    "cardID": 32,
+    "name": "El Musico",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/32_el_musico_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/32_el_musico_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/32_el_musico_bg.jpg",
+    "ordinal": 32
+  },
+  {
+    "cardID": 33,
+    "name": "La Araña",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/33_la_arana_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/33_la_arana_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/33_la_arana_bg.jpg",
+    "ordinal": 33
+  },
+  {
+    "cardID": 34,
+    "name": "El Soldado",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/34_el_soldado_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/34_el_soldado_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/34_el_soldado_bg.jpg",
+    "ordinal": 34
+  },
+  {
+    "cardID": 35,
+    "name": "La Estrella",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/35_la_estrella_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/35_la_estrella_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/35_la_estrella_bg.jpg",
+    "ordinal": 35
+  },
+  {
+    "cardID": 36,
+    "name": "El Cazo",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/36_el_cazo_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/36_el_cazo_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/36_el_cazo_bg.jpg",
+    "ordinal": 36
+  },
+  {
+    "cardID": 37,
+    "name": "El Mundo",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/37_el_mundo_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/37_el_mundo_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/37_el_mundo_bg.jpg",
+    "ordinal": 37
+  },
+  {
+    "cardID": 38,
+    "name": "El Apache",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/38_el_apache_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/38_el_apache_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/38_el_apache_bg.jpg",
+    "ordinal": 38
+  },
+  {
+    "cardID": 39,
+    "name": "El Nopal",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/39_el_nopal_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/39_el_nopal_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/39_el_nopal_bg.jpg",
+    "ordinal": 39
+  },
+  {
+    "cardID": 40,
+    "name": "El Alacran",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/40_el_alacran_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/40_el_alacran_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/40_el_alacran_bg.jpg",
+    "ordinal": 40
+  },
+  {
+    "cardID": 41,
+    "name": "La Rosa",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/41_la_rosa_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/41_la_rosa_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/41_la_rosa_bg.jpg",
+    "ordinal": 41
+  },
+  {
+    "cardID": 42,
+    "name": "La Calavera",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/42_la_calavera_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/42_la_calavera_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/42_la_calavera_bg.jpg",
+    "ordinal": 42
+  },
+  {
+    "cardID": 43,
+    "name": "La Campana",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/43_la_campana_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/43_la_campana_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/43_la_campana_bg.jpg",
+    "ordinal": 43
+  },
+  {
+    "cardID": 44,
+    "name": "El Cantarito",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/44_el_cantarito_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/44_el_cantarito_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/44_el_cantarito_bg.jpg",
+    "ordinal": 44
+  },
+  {
+    "cardID": 45,
+    "name": "El Venado",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/45_el_venado_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/45_el_venado_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/45_el_venado_bg.jpg",
+    "ordinal": 45
+  },
+  {
+    "cardID": 46,
+    "name": "El Sol",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/46_el_sol_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/46_el_sol_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/46_el_sol_bg.jpg",
+    "ordinal": 46
+  },
+  {
+    "cardID": 47,
+    "name": "La Corona",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/47_la_corona_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/47_la_corona_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/47_la_corona_bg.jpg",
+    "ordinal": 47
+  },
+  {
+    "cardID": 48,
+    "name": "La Chalupa",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/48_la_chalupa_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/48_la_chalupa_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/48_la_chalupa_bg.jpg",
+    "ordinal": 48
+  },
+  {
+    "cardID": 49,
+    "name": "El Pino",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/49_el_pino_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/49_el_pino_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/49_el_pino_bg.jpg",
+    "ordinal": 49
+  },
+  {
+    "cardID": 50,
+    "name": "El Pescado",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/50_el_pescado_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/50_el_pescado_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/50_el_pescado_bg.jpg",
+    "ordinal": 50
+  },
+  {
+    "cardID": 51,
+    "name": "La Palma",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/51_la_palma_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/51_la_palma_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/51_la_palma_bg.jpg",
+    "ordinal": 51
+  },
+  {
+    "cardID": 52,
+    "name": "La Maceta",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/52_la_maceta_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/52_la_maceta_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/52_la_maceta_bg.jpg",
+    "ordinal": 52
+  },
+  {
+    "cardID": 53,
+    "name": "El Arpa",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/53_el_arpa_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/53_el_arpa_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/53_el_arpa_bg.jpg",
+    "ordinal": 53
+  },
+  {
+    "cardID": 54,
+    "name": "La Rana",
+    "description": "",
+    "imageSmallPath": "https://stlotetablas.blob.core.windows.net/cards/54_la_rana_sm.jpg",
+    "imageMediumPath": "https://stlotetablas.blob.core.windows.net/cards/54_la_rana_md.jpg",
+    "imageBigPath": "https://stlotetablas.blob.core.windows.net/cards/54_la_rana_bg.jpg",
+    "ordinal": 54
+  }
+]

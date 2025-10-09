@@ -1,0 +1,28 @@
+<Solution>
+  <Folder Name="/aspire/" />
+  <Folder Name="/src/" />
+  <Folder Name="/src/api/">
+    <Project Path="src/api/LoteTablas.Api.Business/LoteTablas.Api.Business.csproj" />
+    <Project Path="src/api/LoteTablas.Api.Data/LoteTablas.Api.Data.csproj" />
+    <Project Path="src/api/LoteTablas.Api.Models/LoteTablas.Api.Models.csproj" />
+    <Project Path="src/api/LoteTablas.Api/LoteTablas.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/backend/" />
+  <Folder Name="/src/backend/grpc/" />
+  <Folder Name="/src/backend/grpc/core/">
+    <Project Path="src/backend/grpc/core/LoteTablas.Core.Business/LoteTablas.Core.Business.csproj" />
+    <Project Path="src/backend/grpc/core/LoteTablas.Core.Data/LoteTablas.Core.Data.csproj" />
+    <Project Path="src/backend/grpc/core/LoteTablas.Core.Models/LoteTablas.Core.Models.csproj" />
+    <Project Path="src/backend/grpc/core/LoteTablas.Core.Service.Definition/LoteTablas.Core.Service.Definition.csproj" />
+    <Project Path="src/backend/grpc/core/LoteTablas.Core.Service/LoteTablas.Core.Service.csproj" />
+  </Folder>
+  <Folder Name="/src/frontend/" />
+  <Folder Name="/src/frontend/blazor/">
+    <Project Path="src/frontend/blazor/LoteTablas.Blazor.UI.Data/LoteTablas.Blazor.UI.Data.csproj" />
+    <Project Path="src/frontend/blazor/LoteTablas.Blazor.UI.Models/LoteTablas.Blazor.UI.Models.csproj" />
+    <Project Path="src/frontend/blazor/LoteTablas.Blazor.UI/LoteTablas.Blazor.UI.csproj" />
+  </Folder>
+  <Folder Name="/src/shared/">
+    <Project Path="src/shared/LoteTablas.Framework.Common/LoteTablas.Framework.Common.csproj" />
+  </Folder>
+</Solution>

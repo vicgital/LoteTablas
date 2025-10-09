@@ -1,0 +1,47 @@
+﻿
+<div class="board-item m-3">
+    <table class="board-table m-4">
+
+        @{
+            int i = 0;
+        }
+        @for (int y = 1; y <= 4; y++)
+        {
+            <tr>
+
+                @for (int x = 1; x <= 4; x++)
+                {
+                    i++;
+                    var boardCard = Board.BoardCards.FirstOrDefault(e => e.Ordinal == i);
+                    var ordinal = i;
+                    @if (boardCard != null)
+                    {
+                        var lotteryCard = LotteryCards.FirstOrDefault(e => e.CardID == boardCard.CardID);
+
+                        <td class="board-cell board-cell-sm">
+                            <img src="@(lotteryCard?.ImageSmallPath)" />
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="board-cell board-cell-sm"></td>
+                    }
+                }
+            </tr>
+        }
+
+    </table>
+
+    <div class="row my-2 align-items-center justify-content-center">
+        <div class="col-auto">
+            <Button Size="Size.Small" Color="ButtonColor.Warning" @onclick="() => OnEditBoard.InvokeAsync(Board)">Editar</Button>
+        </div>
+
+        <div class="col-auto">
+            <Button Size="Size.Small" Color="ButtonColor.Danger" @onclick="() => OnDeleteBoard.InvokeAsync(Board)">Eliminar</Button>
+        </div>
+    </div>
+</div>
+
+
+
