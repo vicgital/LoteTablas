@@ -1,28 +1,47 @@
 <Solution>
   <Folder Name="/aspire/" />
   <Folder Name="/src/" />
-  <Folder Name="/src/api/">
-    <Project Path="src/api/LoteTablas.Api.Business/LoteTablas.Api.Business.csproj" />
-    <Project Path="src/api/LoteTablas.Api.Data/LoteTablas.Api.Data.csproj" />
-    <Project Path="src/api/LoteTablas.Api.Models/LoteTablas.Api.Models.csproj" />
-    <Project Path="src/api/LoteTablas.Api/LoteTablas.Api.csproj" />
+  <Folder Name="/src/1. UI/" />
+  <Folder Name="/src/1. UI/blazor/">
+    <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Data/LoteTablas.Blazor.UI.Data.csproj" />
+    <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Models/LoteTablas.Blazor.UI.Models.csproj" />
+    <Project Path="src/UI/blazor/LoteTablas.Blazor.UI/LoteTablas.Blazor.UI.csproj" />
   </Folder>
-  <Folder Name="/src/backend/" />
-  <Folder Name="/src/backend/grpc/" />
-  <Folder Name="/src/backend/grpc/core/">
+  <Folder Name="/src/2. Gateway/" />
+  <Folder Name="/src/2. Gateway/Api/">
+    <Project Path="src/Gateway/Api/LoteTablas.Api.Business/LoteTablas.Api.Business.csproj" />
+    <Project Path="src/Gateway/Api/LoteTablas.Api.Data/LoteTablas.Api.Data.csproj" />
+    <Project Path="src/Gateway/Api/LoteTablas.Api.Models/LoteTablas.Api.Models.csproj" />
+    <Project Path="src/Gateway/Api/LoteTablas.Api/LoteTablas.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/3. Services/" />
+  <Folder Name="/src/3. Services/Grpc.Lottery/">
+    <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Application/LoteTablas.Grpc.Lottery.Application.csproj" Id="292699d2-332a-493c-8b9d-58aa503e213f" />
+    <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Domain/LoteTablas.Grpc.Lottery.Domain.csproj" Id="81738397-f248-4f25-b169-8bea52349d73" />
+    <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Infrastructure/LoteTablas.Grpc.Lottery.Infrastructure.csproj" Id="a157f95e-c707-401b-aad8-17d08082fffb" />
+    <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Service/LoteTablas.Grpc.Lottery.Service.csproj" Id="45beb5b1-e477-4998-8977-e10c176d4253" />
+  </Folder>
+  <Folder Name="/src/4. Databases/" />
+  <Folder Name="/src/5. Shared/">
+    <Project Path="src/Shared/LoteTablas.Grpc.Definitions/LoteTablas.Grpc.Definitions.csproj" Id="68b9a3d1-83f4-48fd-843e-3fdbc39fd3d5" />
+  </Folder>
+  <Folder Name="/src/pending../" />
+  <Folder Name="/src/pending../backend/" />
+  <Folder Name="/src/pending../backend/grpc/" />
+  <Folder Name="/src/pending../backend/grpc/core/">
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Business/LoteTablas.Core.Business.csproj" />
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Data/LoteTablas.Core.Data.csproj" />
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Models/LoteTablas.Core.Models.csproj" />
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Service.Definition/LoteTablas.Core.Service.Definition.csproj" />
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Service/LoteTablas.Core.Service.csproj" />
   </Folder>
-  <Folder Name="/src/frontend/" />
-  <Folder Name="/src/frontend/blazor/">
-    <Project Path="src/frontend/blazor/LoteTablas.Blazor.UI.Data/LoteTablas.Blazor.UI.Data.csproj" />
-    <Project Path="src/frontend/blazor/LoteTablas.Blazor.UI.Models/LoteTablas.Blazor.UI.Models.csproj" />
-    <Project Path="src/frontend/blazor/LoteTablas.Blazor.UI/LoteTablas.Blazor.UI.csproj" />
+  <Folder Name="/src/pending../backend/grpc/definition/">
+    <Project Path="src/backend/grpc/definition/LoteTablas.Lottery.Service.Definition/LoteTablas.Lottery.Service.Definition.csproj" Id="842af49a-4f5c-4dad-b098-88f85ebd793c" />
   </Folder>
-  <Folder Name="/src/shared/">
+  <Folder Name="/src/pending../backend/grpc/lottery/">
+    <Project Path="src/backend/grpc/lottery/LoteTablas.Lottery.Service/LoteTablas.Lottery.Service.csproj" Id="321a1d2a-3638-4eb1-b653-bfdfe0697e71" />
+  </Folder>
+  <Folder Name="/src/pending../shared/">
     <Project Path="src/shared/LoteTablas.Framework.Common/LoteTablas.Framework.Common.csproj" />
   </Folder>
 </Solution>
