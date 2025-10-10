@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "LoteTablas.Grpc.Definitions";
+
+package CardService;
+
+service Card {
+    
+    rpc GetCard (GetCardRequest) returns (CardModel);
+  
+    rpc GetCards (GetCardsRequest) returns (CardsReply);
+
+}
+
+message GetCardRequest {
+	int32 cardID = 1;
+}
+
+message CardModel {
+  int32 cardID = 1;
+  string name = 2;
+  string description = 3;
+  string imageSmallPath = 4;
+  string imageMediumPath = 5;
+  string imageBigPath = 6;
+  int32 creatorUserID = 7;
+}
+
+message GetCardsRequest {
+	repeated int32 cardIDs = 1;
+}
+
+message CardsReply {
+	repeated CardModel cards = 1;
+}

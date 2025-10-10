@@ -7,7 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\..\shared\LoteTablas.Framework.Common\LoteTablas.Framework.Common.csproj" />
 	  <ProjectReference Include="..\LoteTablas.Core.Models\LoteTablas.Core.Models.csproj" />
 	</ItemGroup>
 

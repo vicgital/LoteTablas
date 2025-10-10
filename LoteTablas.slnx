@@ -15,6 +15,18 @@
     <Project Path="src/Gateway/Api/LoteTablas.Api/LoteTablas.Api.csproj" />
   </Folder>
   <Folder Name="/src/3. Services/" />
+  <Folder Name="/src/3. Services/Grpc.Board/">
+    <Project Path="src/Services/LoteTablas.Grpc.Board/LoteTablas.Grpc.Board.Application/LoteTablas.Grpc.Board.Application.csproj" Id="19db6ad5-f9f2-42e1-8ded-e1f11f199b5f" />
+    <Project Path="src/Services/LoteTablas.Grpc.Board/LoteTablas.Grpc.Board.Domain/LoteTablas.Grpc.Board.Domain.csproj" Id="23790be2-8769-4116-8c08-06b445c163cd" />
+    <Project Path="src/Services/LoteTablas.Grpc.Board/LoteTablas.Grpc.Board.Infrastructure/LoteTablas.Grpc.Board.Infrastructure.csproj" Id="1dad7c7e-b6c6-4d7d-a993-409a05c55246" />
+    <Project Path="src/Services/LoteTablas.Grpc.Board/LoteTablas.Grpc.Board.Service/LoteTablas.Grpc.Board.Service.csproj" Id="fe899521-d886-40d7-b918-aa79883b5242" />
+  </Folder>
+  <Folder Name="/src/3. Services/Grpc.Card/">
+    <Project Path="src/Services/LoteTablas.Grpc.Card/LoteTablas.Grpc.Card.Application/LoteTablas.Grpc.Card.Application.csproj" Id="3c64bbf9-e138-4d37-ae8c-1d476450ff09" />
+    <Project Path="src/Services/LoteTablas.Grpc.Card/LoteTablas.Grpc.Card.Domain/LoteTablas.Grpc.Card.Domain.csproj" Id="1500d446-634e-47f6-8dc9-cc0a86383156" />
+    <Project Path="src/Services/LoteTablas.Grpc.Card/LoteTablas.Grpc.Card.Infrastructure/LoteTablas.Grpc.Card.Infrastructure.csproj" Id="b08f6b5a-0134-464a-b32f-2fabea6f5931" />
+    <Project Path="src/Services/LoteTablas.Grpc.Card/LoteTablas.Grpc.Card.Service/LoteTablas.Grpc.Card.Service.csproj" Id="6f69cfeb-d728-4929-9721-7375062974a7" />
+  </Folder>
   <Folder Name="/src/3. Services/Grpc.Lottery/">
     <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Application/LoteTablas.Grpc.Lottery.Application.csproj" Id="292699d2-332a-493c-8b9d-58aa503e213f" />
     <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Domain/LoteTablas.Grpc.Lottery.Domain.csproj" Id="81738397-f248-4f25-b169-8bea52349d73" />
@@ -22,8 +34,19 @@
     <Project Path="src/Services/LoteTablas.Grpc.Lottery/LoteTablas.Grpc.Lottery.Service/LoteTablas.Grpc.Lottery.Service.csproj" Id="45beb5b1-e477-4998-8977-e10c176d4253" />
   </Folder>
   <Folder Name="/src/4. Databases/" />
-  <Folder Name="/src/5. Shared/">
-    <Project Path="src/Shared/LoteTablas.Grpc.Definitions/LoteTablas.Grpc.Definitions.csproj" Id="68b9a3d1-83f4-48fd-843e-3fdbc39fd3d5" />
+  <Folder Name="/src/5. Shared/" />
+  <Folder Name="/src/5. Shared/Application/">
+    <Project Path="src/Shared/Application/LoteTablas.Application.Contracts/LoteTablas.Application.Contracts.csproj" Id="9fe08226-40d8-4062-a263-c19648f1c38c" />
+  </Folder>
+  <Folder Name="/src/5. Shared/Domain/" />
+  <Folder Name="/src/5. Shared/Grpc/">
+    <Project Path="src/Shared/Grpc/LoteTablas.Grpc.Definitions/LoteTablas.Grpc.Definitions.csproj" />
+  </Folder>
+  <Folder Name="/src/5. Shared/Infrastructure/">
+    <Project Path="src/Shared/Infrastructure/LoteTablas.Infrastructure.Cache/LoteTablas.Infrastructure.Cache.csproj" />
+    <Project Path="src/Shared/Infrastructure/LoteTablas.Infrastructure.Configuration/LoteTablas.Infrastructure.Configuration.csproj" Id="bed3bb63-3147-41ad-9e38-90b1176c090d" />
+    <Project Path="src/Shared/Infrastructure/LoteTablas.Infrastructure.Database/LoteTablas.Infrastructure.Database.csproj" />
+    <Project Path="src/Shared/Infrastructure/LoteTablas.Infrastructure.Logging/LoteTablas.Infrastructure.Logging.csproj" Id="a0f6b74c-85d1-4a00-8761-ad491ac16502" />
   </Folder>
   <Folder Name="/src/pending../" />
   <Folder Name="/src/pending../backend/" />
@@ -34,14 +57,5 @@
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Models/LoteTablas.Core.Models.csproj" />
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Service.Definition/LoteTablas.Core.Service.Definition.csproj" />
     <Project Path="src/backend/grpc/core/LoteTablas.Core.Service/LoteTablas.Core.Service.csproj" />
-  </Folder>
-  <Folder Name="/src/pending../backend/grpc/definition/">
-    <Project Path="src/backend/grpc/definition/LoteTablas.Lottery.Service.Definition/LoteTablas.Lottery.Service.Definition.csproj" Id="842af49a-4f5c-4dad-b098-88f85ebd793c" />
-  </Folder>
-  <Folder Name="/src/pending../backend/grpc/lottery/">
-    <Project Path="src/backend/grpc/lottery/LoteTablas.Lottery.Service/LoteTablas.Lottery.Service.csproj" Id="321a1d2a-3638-4eb1-b653-bfdfe0697e71" />
-  </Folder>
-  <Folder Name="/src/pending../shared/">
-    <Project Path="src/shared/LoteTablas.Framework.Common/LoteTablas.Framework.Common.csproj" />
   </Folder>
 </Solution>

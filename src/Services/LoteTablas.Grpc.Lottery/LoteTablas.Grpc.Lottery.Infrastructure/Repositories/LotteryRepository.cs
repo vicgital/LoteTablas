@@ -1,20 +1,16 @@
 ﻿using Dapper;
-using LoteTablas.Core.Data.Interfaces;
-using LoteTablas.Core.Models.DAO;
-using LoteTablas.Framework.Common.Database;
+using LoteTablas.Grpc.Lottery.Application.Contracts.Persistence;
+using LoteTablas.Grpc.Lottery.Domain.Entities;
 using System.Data;
 
-namespace LoteTablas.Core.Data
+namespace LoteTablas.Grpc.Lottery.Infrastructure.Repositories
 {
-    public class LotteryRepository(IDatabaseConnection databaseConnection) : ILotteryRepository
+    public class LotteryRepository(IDbConnection dbConnection) : ILotteryRepository
     {
+        private readonly IDbConnection _dbConnection = dbConnection;
 
-        private readonly IDatabaseConnection _databaseConnection = databaseConnection;
-
-        public async Task<List<Lottery>> GetFreeLotteries()
+        public async Task<List<Domain.Entities.Lottery>> GetFreeLotteries()
         {
-            using IDbConnection conn = _databaseConnection.GetDbSqlConnection();
-
             var sql = @"
                         SELECT 
                          L.[LotteryID]
@@ -29,15 +25,13 @@ namespace LoteTablas.Core.Data
                         AND L.[OwnerUserID] IS NULL
                         ";
 
-            var result = await conn.QueryAsync<Lottery>(sql);
+            var result = await _dbConnection.QueryAsync<Domain.Entities.Lottery>(sql);
             return [.. result];
 
         }
 
-        public async Task<List<Lottery>> GetLotteriesByLotteryType(int lotteryTypeID)
+        public async Task<List<Domain.Entities.Lottery>> GetLotteriesByLotteryType(int lotteryTypeID)
         {
-            using IDbConnection conn = _databaseConnection.GetDbSqlConnection();
-
             var sql = @"
                         SELECT 
                          L.[LotteryID]
@@ -53,14 +47,13 @@ namespace LoteTablas.Core.Data
                         AND L.[OwnerUserID] IS NULL
                         ";
 
-            var result = await conn.QueryAsync<Lottery>(sql, new { lotteryTypeID });
-            return result.ToList();
+            var result = await _dbConnection.QueryAsync<Domain.Entities.Lottery>(sql, new { lotteryTypeID });
+            return [.. result];
+
         }
 
-        public async Task<List<Lottery>> GetLotteriesByUserId(int userId)
+        public async Task<List<Domain.Entities.Lottery>> GetLotteriesByUserId(int userId)
         {
-            using IDbConnection conn = _databaseConnection.GetDbSqlConnection();
-
             var sql = @"
                         SELECT 
                          L.[LotteryID]
@@ -75,13 +68,13 @@ namespace LoteTablas.Core.Data
                         AND L.[OwnerUserID] = @userId
                         ";
 
-            var result = await conn.QueryAsync<Lottery>(sql, new { userId });
-            return result.ToList();
+            var result = await _dbConnection.QueryAsync<Domain.Entities.Lottery>(sql, new { userId });
+            return [.. result];
+
         }
 
-        public async Task<Lottery?> GetLottery(int lotteryID)
-        {
-            using IDbConnection conn = _databaseConnection.GetDbSqlConnection();
+        public async Task<Domain.Entities.Lottery?> GetLottery(int lotteryID)
+        {   
 
             var sql = @"
                         SELECT 
@@ -97,14 +90,12 @@ namespace LoteTablas.Core.Data
                         AND L.[LotteryID] = @lotteryID
                         ";
 
-            var result = await conn.QueryFirstOrDefaultAsync<Lottery>(sql, new { lotteryID });
+            var result = await _dbConnection.QueryFirstOrDefaultAsync<Domain.Entities.Lottery>(sql, new { lotteryID });
             return result;
         }
 
         public async Task<List<LotteryCard>> GetLotteryCardsByLotteryID(int lotteryID)
         {
-            using IDbConnection conn = _databaseConnection.GetDbSqlConnection();
-
             var sql = @"
                         SELECT
                          LC.[CardID]
@@ -121,13 +112,12 @@ namespace LoteTablas.Core.Data
                         ORDER BY LC.[Ordinal]
                         ";
 
-            var result = await conn.QueryAsync<LotteryCard>(sql, new { lotteryID });
-            return result.ToList();
+            var result = await _dbConnection.QueryAsync<LotteryCard>(sql, new { lotteryID });
+            return [.. result];
         }
 
         public async Task<List<LotteryType>> GetLotteryTypes()
         {
-            using IDbConnection conn = _databaseConnection.GetDbSqlConnection();
 
             var sql = @"
                         SELECT
@@ -138,11 +128,8 @@ namespace LoteTablas.Core.Data
                         FROM [LotteryType] WITH (NOLOCK)
                         ";
 
-            var result = await conn.QueryAsync<LotteryType>(sql);
-            return result.ToList();
+            var result = await _dbConnection.QueryAsync<LotteryType>(sql);
+            return [.. result];
         }
-
-
-
     }
 }

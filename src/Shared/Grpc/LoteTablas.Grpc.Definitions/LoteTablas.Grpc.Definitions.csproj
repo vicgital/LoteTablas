@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="protos\common.proto" GrpcServices="Both" ProtoRoot="protos" />
+		<Protobuf Include="protos\lottery.proto" GrpcServices="Both" ProtoRoot="protos" />
+		<Protobuf Include="protos\card.proto" GrpcServices="Both" ProtoRoot="protos" />
+		<Protobuf Include="protos\board.proto" GrpcServices="Both" ProtoRoot="protos" />
+	</ItemGroup>
+
+</Project>

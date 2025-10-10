@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Grpc\LoteTablas.Grpc.Definitions\LoteTablas.Grpc.Definitions.csproj" />
-    <ProjectReference Include="..\LoteTablas.Grpc.Lottery.Application\LoteTablas.Grpc.Lottery.Application.csproj" />
-    <ProjectReference Include="..\LoteTablas.Grpc.Lottery.Infrastructure\LoteTablas.Grpc.Lottery.Infrastructure.csproj" />
+    <ProjectReference Include="..\LoteTablas.Grpc.Board.Application\LoteTablas.Grpc.Board.Application.csproj" />
+    <ProjectReference Include="..\LoteTablas.Grpc.Board.Infrastructure\LoteTablas.Grpc.Board.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

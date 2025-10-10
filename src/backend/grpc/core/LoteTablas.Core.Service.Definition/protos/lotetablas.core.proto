@@ -113,7 +113,6 @@ message LotteryModel {
 
 message GetCardRequest {
 	int32 cardID = 1;
-	
 }
 
 message GetCardsRequest {
