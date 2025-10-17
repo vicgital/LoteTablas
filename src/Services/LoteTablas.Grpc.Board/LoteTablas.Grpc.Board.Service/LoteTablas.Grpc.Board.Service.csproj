@@ -1,19 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="15.0.1" />
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\Grpc\LoteTablas.Grpc.Definitions\LoteTablas.Grpc.Definitions.csproj" />
-    <ProjectReference Include="..\LoteTablas.Grpc.Board.Application\LoteTablas.Grpc.Board.Application.csproj" />
-    <ProjectReference Include="..\LoteTablas.Grpc.Board.Infrastructure\LoteTablas.Grpc.Board.Infrastructure.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Shared\Grpc\LoteTablas.Grpc.Definitions\LoteTablas.Grpc.Definitions.csproj" />
+		<ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Configuration\LoteTablas.Infrastructure.Configuration.csproj" />
+		<ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Logging\LoteTablas.Infrastructure.Logging.csproj" />
+		
+		<ProjectReference Include="..\LoteTablas.Grpc.Board.Application\LoteTablas.Grpc.Board.Application.csproj" />
+		<ProjectReference Include="..\LoteTablas.Grpc.Board.Infrastructure\LoteTablas.Grpc.Board.Infrastructure.csproj" />
+	</ItemGroup>
 
 </Project>

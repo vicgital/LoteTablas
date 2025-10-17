@@ -12,24 +12,24 @@ service Lottery {
     // Lottery
     rpc GetLotteriesByUserId (Common.UserIdRequest) returns (LotteriesReply);
 
-    rpc GetLotteriesByLotteryType (LotteryTypeIDRequest) returns (LotteriesReply);
+    rpc GetLotteriesByLotteryType (LotteryTypeIdRequest) returns (LotteriesReply);
 
     rpc GetFreeLotteries (Common.EmptyRequest) returns (LotteriesReply);
 
-    rpc GetLottery (LotteryIDRequest) returns (LotteryModel);
+    rpc GetLottery (LotteryIdRequest) returns (LotteryModel);
 
     rpc GetLotteryTypes (Common.EmptyRequest) returns (LotteryTypesReply);
   
-    rpc GetLotteryCardsByLotteryID (LotteryIDRequest) returns (LotteryCardsReply);  
+    rpc GetLotteryCardsByLotteryId (LotteryIdRequest) returns (LotteryCardsReply);  
 
 }
 
-message LotteryTypeIDRequest {
-	int32 lotteryTypeID = 1;
+message LotteryTypeIdRequest {
+	string lotteryTypeId = 1;
 }
 
-message LotteryIDRequest {
-	int32 lotteryID = 1;
+message LotteryIdRequest {
+	string lotteryId = 1;
 }
 
 message LotteriesReply {
@@ -37,12 +37,12 @@ message LotteriesReply {
 }
 
 message LotteryModel {
-	int32 lotteryID  = 1;
+	string lotteryId  = 1;
 	string name  = 2;
 	string description = 3;
-	int32 lotteryTypeID = 4;
+	string lotteryTypeId = 4;
 	string lotteryType = 5;
-	int32 ownerUserID = 6;
+	string ownerUserId = 6;
 }
 
 
@@ -52,7 +52,7 @@ message LotteryTypesReply {
 
 
 message LotteryTypeModel {
-	int32  lotteryTypeID = 1;
+	string lotteryTypeId = 1;
 	string name = 2;
 	string description = 3;
 	string code = 4;
@@ -63,11 +63,9 @@ message LotteryCardsReply {
 }
 
 message LotteryCardModel {
-	int32 cardID  = 1;
+	string cardId  = 1;
 	string name = 2;
 	string description = 3;
-	string imageSmallPath = 4;
-	string imageMediumPath = 5;
-	string imageBigPath = 6;
-	int32 ordinal = 7;
+	string imagePath = 4;
+	int32 ordinal = 5;
 }

@@ -1,135 +1,88 @@
-﻿using Dapper;
-using LoteTablas.Grpc.Lottery.Application.Contracts.Persistence;
+﻿using LoteTablas.Grpc.Lottery.Application.Contracts.Persistence;
 using LoteTablas.Grpc.Lottery.Domain.Entities;
-using System.Data;
+using MongoDB.Driver;
 
 namespace LoteTablas.Grpc.Lottery.Infrastructure.Repositories
 {
-    public class LotteryRepository(IDbConnection dbConnection) : ILotteryRepository
+    public class LotteryRepository(IMongoDatabase mongoDatabase) : ILotteryRepository
     {
-        private readonly IDbConnection _dbConnection = dbConnection;
+        private readonly IMongoCollection<Domain.Entities.Lottery> _lotteries = mongoDatabase.GetCollection<Domain.Entities.Lottery>("lotteries");
+        private readonly IMongoCollection<Domain.Entities.LotteryType> _lotteryTypes = mongoDatabase.GetCollection<Domain.Entities.LotteryType>("lotteryTypes");
+        private readonly IMongoCollection<Domain.Entities.LotteryCards> _lotteryCards = mongoDatabase.GetCollection<Domain.Entities.LotteryCards>("lotteryCards");
+        private readonly IMongoCollection<Domain.Entities.Card> _cards = mongoDatabase.GetCollection<Domain.Entities.Card>("cards");
 
         public async Task<List<Domain.Entities.Lottery>> GetFreeLotteries()
         {
-            var sql = @"
-                        SELECT 
-                         L.[LotteryID]
-                        ,L.[Name]
-                        ,L.[Description]
-                        ,L.[LotteryTypeID]
-                        ,LT.[Name] as [LotteryType]
-                        ,L.[OwnerUserID]
-                        FROM [Lottery] AS L WITH (NOLOCK)
-                        INNER JOIN [LotteryType] AS LT WITH (NOLOCK) ON L.[LotteryTypeID] = LT.[LotteryTypeID]
-                        WHERE L.[Enabled] = 1 AND LT.[Enabled] = 1
-                        AND L.[OwnerUserID] IS NULL
-                        ";
-
-            var result = await _dbConnection.QueryAsync<Domain.Entities.Lottery>(sql);
+            var result = await _lotteries.Find(e => e.OwnerUserId == null && e.Enabled).ToListAsync();
             return [.. result];
-
         }
 
-        public async Task<List<Domain.Entities.Lottery>> GetLotteriesByLotteryType(int lotteryTypeID)
+        public async Task<List<Domain.Entities.Lottery>> GetLotteriesByLotteryType(string lotteryTypeId)
         {
-            var sql = @"
-                        SELECT 
-                         L.[LotteryID]
-                        ,L.[Name]
-                        ,L.[Description]
-                        ,L.[LotteryTypeID]
-                        ,LT.[Name] as [LotteryType]
-                        ,L.[OwnerUserID]
-                        FROM [Lottery] AS L WITH (NOLOCK)
-                        INNER JOIN [LotteryType] AS LT WITH (NOLOCK) ON L.[LotteryTypeID] = LT.[LotteryTypeID]
-                        WHERE L.[Enabled] = 1 AND LT.[Enabled] = 1
-                        AND L.[LotteryTypeID] = @lotteryTypeID
-                        AND L.[OwnerUserID] IS NULL
-                        ";
 
-            var result = await _dbConnection.QueryAsync<Domain.Entities.Lottery>(sql, new { lotteryTypeID });
-            return [.. result];
 
-        }
+            var result = await _lotteries.Find(e =>
+                e.OwnerUserId == null &&
+                e.Enabled &&
+                e.LotteryTypeId != null &&
+                e.LotteryTypeId.Equals(lotteryTypeId)).ToListAsync();
 
-        public async Task<List<Domain.Entities.Lottery>> GetLotteriesByUserId(int userId)
-        {
-            var sql = @"
-                        SELECT 
-                         L.[LotteryID]
-                        ,L.[Name]
-                        ,L.[Description]
-                        ,L.[LotteryTypeID]
-                        ,LT.[Name] as [LotteryType]
-                        ,L.[OwnerUserID]
-                        FROM [Lottery] AS L WITH (NOLOCK)
-                        INNER JOIN [LotteryType] AS LT WITH (NOLOCK) ON L.[LotteryTypeID] = LT.[LotteryTypeID]
-                        WHERE L.[Enabled] = 1 AND LT.[Enabled] = 1
-                        AND L.[OwnerUserID] = @userId
-                        ";
-
-            var result = await _dbConnection.QueryAsync<Domain.Entities.Lottery>(sql, new { userId });
-            return [.. result];
-
-        }
-
-        public async Task<Domain.Entities.Lottery?> GetLottery(int lotteryID)
-        {   
-
-            var sql = @"
-                        SELECT 
-                         L.[LotteryID]
-                        ,L.[Name]
-                        ,L.[Description]
-                        ,L.[LotteryTypeID]
-                        ,LT.[Name] as [LotteryType]
-                        ,L.[OwnerUserID]
-                        FROM [Lottery] AS L WITH (NOLOCK)
-                        INNER JOIN [LotteryType] AS LT WITH (NOLOCK) ON L.[LotteryTypeID] = LT.[LotteryTypeID]
-                        WHERE L.[Enabled] = 1 AND LT.[Enabled] = 1
-                        AND L.[LotteryID] = @lotteryID
-                        ";
-
-            var result = await _dbConnection.QueryFirstOrDefaultAsync<Domain.Entities.Lottery>(sql, new { lotteryID });
             return result;
+
         }
 
-        public async Task<List<LotteryCard>> GetLotteryCardsByLotteryID(int lotteryID)
+        public async Task<List<Domain.Entities.Lottery>> GetLotteriesByUserId(string userId)
         {
-            var sql = @"
-                        SELECT
-                         LC.[CardID]
-                        ,C.[Name]
-                        ,C.[Description]
-                        ,C.[ImageSmallPath]
-                        ,C.[ImageMediumPath]
-                        ,C.[ImageBigPath]
-                        ,LC.[Ordinal]
-                        FROM [LotteryCard] AS LC WITH(NOLOCK)
-                        INNER JOIN [Card] AS C WITH(NOLOCK) ON LC.[CardID] = C.[CardID]
-                        WHERE [LotteryID] = @lotteryID
-                        AND LC.[Enabled] = 1 AND C.[Enabled] = 1
-                        ORDER BY LC.[Ordinal]
-                        ";
 
-            var result = await _dbConnection.QueryAsync<LotteryCard>(sql, new { lotteryID });
+            var result = await _lotteries.Find(e =>
+                e.OwnerUserId != null &&
+                e.OwnerUserId.Equals(userId) &&
+                e.Enabled).ToListAsync();
+
             return [.. result];
+
+        }
+
+        public async Task<Domain.Entities.Lottery?> GetLottery(string lotteryId)
+        {
+
+            var result = await _lotteries.Find(e =>
+                e.Id == lotteryId &&
+                e.Enabled).SingleOrDefaultAsync();
+
+            return result;
         }
 
         public async Task<List<LotteryType>> GetLotteryTypes()
         {
-
-            var sql = @"
-                        SELECT
-                         [LotteryTypeID]
-                        ,[Name]
-                        ,[Description]
-                        ,[Code]
-                        FROM [LotteryType] WITH (NOLOCK)
-                        ";
-
-            var result = await _dbConnection.QueryAsync<LotteryType>(sql);
+            var result = await _lotteryTypes.Find(e => true).ToListAsync();
             return [.. result];
+        }
+
+        public async Task<(LotteryCards?, List<Card>)> GetLotteryAndCards(string lotteryId)
+        {
+            var pipeline = _lotteryCards.Aggregate()
+            .Match(l => l.LotteryId.Equals(lotteryId))
+            .Lookup(
+                foreignCollection: _cards,
+                localField: l => l.Cards.Select(bc => bc.CardId),
+                foreignField: c => c.Id,
+                @as: (LotteryCardsDetails l) => l.CardDetails
+            );
+
+            var result = await pipeline.FirstOrDefaultAsync();
+
+            if (result == null)
+                return (null, []);
+
+            return (result, result.CardDetails);
+
+        }
+
+        private class LotteryCardsDetails : Domain.Entities.LotteryCards
+        {
+
+            public List<Card> CardDetails { get; set; } = [];
         }
     }
 }

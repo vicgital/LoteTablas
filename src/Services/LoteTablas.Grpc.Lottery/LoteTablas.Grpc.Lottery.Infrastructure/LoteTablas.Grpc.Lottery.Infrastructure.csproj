@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.66" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Database\LoteTablas.Infrastructure.Database.csproj" />
     <ProjectReference Include="..\LoteTablas.Grpc.Lottery.Application\LoteTablas.Grpc.Lottery.Application.csproj" />
   </ItemGroup>

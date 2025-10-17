@@ -9,23 +9,16 @@ import "common.proto";
 service Board {
     
   rpc GetBoardSizes (Common.EmptyRequest) returns (BoardSizesReply);
+
+  rpc GetUserBoards(Common.UserIdRequest) returns (GetUserBoardsReply);
+
+  rpc SaveUserBoard (SaveUserBoardRequest) returns (Common.SuccessReply);
   
-  rpc SaveBoard (SaveBoardRequest) returns (BoardModel);
-  
-  rpc DeleteBoard (DeleteBoardRequest) returns (Common.SuccessReply);
-
-  rpc GetBoardsByUserID (Common.UserIdRequest) returns (GetBoardsByUserIDReply);
-
-  rpc GetFullBoardByBoardID (BoardIDRequest) returns (BoardModel);
-
-  rpc SaveBoardCards (SaveBoardCardsRequest) returns (Common.SuccessReply);
+  rpc DeleteUserBoard (DeleteUserBoardRequest) returns (Common.SuccessReply);
 
   rpc GetBoardDocumentStream(BoardDocumentRequest) returns (stream Common.DataChunk) {}
 
-  rpc GetBoardDocumentsStream(BoardDocumentsRequest) returns (stream Common.DataChunk) {}
-
-  rpc GetUserBoardsLiteDocumentStream(UserBoardsLiteDocumentRequest) returns (stream Common.DataChunk) {}
-
+  rpc GetBoardDocumentsStream(BoardDocumentsRequest) returns (stream Common.DataChunk) {} 
 
 }
 
@@ -34,79 +27,55 @@ message BoardSizesReply {
   repeated BoardSizeModel boardSizes = 1;
 }
 
-
-message BoardIDRequest {
-	int32 boardID = 1;
-}
-
-message GetBoardsByUserIDReply	{
-	repeated BoardModel boards = 1;
-}
-
-message SaveBoardRequest {
-	string name = 1;
-	int32 boardSizeId = 2;
-	int32 lotteryID = 3;
-	int32 ownerUserID = 4;
-}
-
 message BoardSizeModel {
-	int32 boardSizeID = 1;
+	string boardSizeId = 1;
 	string code = 2;
 	int32 xSize = 3;
 	int32 ySize = 4;
 }
 
-message BoardModel {
-	int32 boardID = 1;
-	string name = 2;
-	int32 boardSizeID = 3;
-	int32 lotteryID = 4;
-	string fileUrl = 5;
-	int32 ownerUserID = 6;
-	repeated BoardCardModel boardCards = 7;
+message GetUserBoardsReply	{
+	repeated UserBoardModel userBoards = 1;
 }
 
+message UserBoardModel {
+	string userBoardId = 1;
+	string ownerUserId = 2;
+	string lotteryId = 3;
+	repeated UserBoardCardModel userBoardCards = 4;
+}
 
-message BoardCardModel {
-	int32 cardID = 1;
+message UserBoardCardModel {
+	string cardId = 1;
 	int32 ordinal = 2;
-	string name = 3;
-	string description = 4;
-	string imageSmallPath = 5;
-	string imageMediumPath = 6;
-	string imageBigPath = 7;
-	int32 creatorUserID = 8;
 }
 
-message DeleteBoardRequest {
-	int32 boardID = 1;
+message DeleteUserBoardRequest {
+	string userBoardId = 1;
 }
 
-message SaveBoardCardsRequest {
-	int32 boardID = 1;
-	repeated BoardCardModel boardCards = 2;
+message SaveUserBoardRequest {
+	string ownerUserId = 1;
+	string lotteryId = 2;
+	repeated UserBoardCardModel userBoardCards = 3;
 }
+
+// 
 
 message BoardDocumentRequest {
-  int32 boardID = 1; 
+	BoardDocumentModel board = 1;
 }
-
 
 message BoardDocumentsRequest {
-	repeated int32 boardIDs = 1;
+	repeated BoardDocumentModel boards = 1;
 }
 
-message UserBoardsLiteDocumentRequest {
-	repeated BoardLiteModel userBoards = 1;
+message BoardDocumentModel {
+	repeated BoardDocumentCardModel boardCards = 1;
 }
 
-message BoardLiteModel {
-	int32 boardID = 1;
-	repeated BoardCardLiteModel boardCards = 2;
-}
-
-message BoardCardLiteModel {
-	int32 cardID = 1;
+message BoardDocumentCardModel {
+	int32 cardId = 1;
 	int32 ordinal = 2;
 }
+

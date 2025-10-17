@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="13.0.0" />
+	</ItemGroup>
+
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Application\LoteTablas.Application.Contracts\LoteTablas.Application.Contracts.csproj" />
     <ProjectReference Include="..\LoteTablas.Grpc.Card.Domain\LoteTablas.Grpc.Card.Domain.csproj" />
   </ItemGroup>
 

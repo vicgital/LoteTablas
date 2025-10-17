@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LoteTablas.Database.MongoDB.Console": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "LOTETABLAS_MONGODB_CONNECTION_STRING": "mongodb+srv://svc_lotetablas:zf4LwiYpNXxwUR6e@lotetablas-prod.s6yxkou.mongodb.net/?retryWrites=true&w=majority&appName=lotetablas-prod"
+      }
+    }
+  }
+}

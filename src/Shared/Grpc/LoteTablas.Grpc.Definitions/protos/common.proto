@@ -11,7 +11,7 @@ message SuccessReply {
 }
 
 message UserIdRequest {
-  int32 userId = 1;
+  string userId = 1;
 }
 
 message DataChunk 

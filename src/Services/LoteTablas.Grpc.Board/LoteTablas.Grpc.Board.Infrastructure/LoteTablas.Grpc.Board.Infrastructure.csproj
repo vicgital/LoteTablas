@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Grpc\LoteTablas.Grpc.Definitions\LoteTablas.Grpc.Definitions.csproj" />
     <ProjectReference Include="..\LoteTablas.Grpc.Board.Application\LoteTablas.Grpc.Board.Application.csproj" />
   </ItemGroup>
 

@@ -1,10 +1,22 @@
-﻿namespace LoteTablas.Grpc.Lottery.Domain.Entities
+﻿using LoteTablas.Domain.Entities;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace LoteTablas.Grpc.Lottery.Domain.Entities
 {
-    public class LotteryType
+    public class LotteryType : EntityBase
     {
-        public int LotteryTypeID { get; set; }
+
+        [BsonElement("name")]
+        [BsonRequired]
         public string Name { get; set; } = string.Empty;
+
+        [BsonElement("description")]
+        [BsonRequired]
         public string Description { get; set; } = string.Empty;
+
+        [BsonElement("code")]
+        [BsonRequired]
         public string Code { get; set; } = string.Empty;
     }
 }

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Shared\Grpc\LoteTablas.Grpc.Definitions\LoteTablas.Grpc.Definitions.csproj" />
+		<ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Configuration\LoteTablas.Infrastructure.Configuration.csproj" />
+		<ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Logging\LoteTablas.Infrastructure.Logging.csproj" />
+		<ProjectReference Include="..\LoteTablas.Grpc.Document.Application\LoteTablas.Grpc.Document.Application.csproj" />
+		<ProjectReference Include="..\LoteTablas.Grpc.Document.Infrastructure\LoteTablas.Grpc.Document.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>

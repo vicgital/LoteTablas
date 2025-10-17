@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "LoteTablas.Grpc.Definitions";
+
+package DocumentService;
+
+import "common.proto";
+
+service Document {
+    rpc ConvertHtmlToPDF (ConvertHtmlToPDFRequest) returns (stream Common.DataChunk);
+}
+
+message ConvertHtmlToPDFRequest {
+  string bodyHtml = 1;
+  string headerHtml = 2;
+  string footerHtml = 3;
+}

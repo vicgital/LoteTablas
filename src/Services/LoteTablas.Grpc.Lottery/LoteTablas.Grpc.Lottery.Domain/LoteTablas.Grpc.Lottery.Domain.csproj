@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Domain\LoteTablas.Domain.Entities\LoteTablas.Domain.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

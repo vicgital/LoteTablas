@@ -2,7 +2,7 @@
 
 namespace LoteTablas.Infrastructure.Configuration.Helpers
 {
-    static class ConfigurationHelper
+    public static class ConfigurationHelper
     {
         /// <summary>
         /// Gets an instance of IConfiguration using a appsettings.json file and an Azure App Config Instance

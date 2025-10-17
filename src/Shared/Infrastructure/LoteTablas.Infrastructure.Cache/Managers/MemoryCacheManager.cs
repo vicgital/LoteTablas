@@ -1,12 +1,17 @@
 ﻿using LoteTablas.Application.Contracts.Cache;
+using LoteTablas.Application.Contracts.Configuration;
+using LoteTablas.Infrastructure.Configuration.Constants;
 using Microsoft.Extensions.Caching.Memory;
 using System.Text.Json;
 
 namespace LoteTablas.Infrastructure.Cache.Managers
 {
-    public class MemoryCacheManager(IMemoryCache memoryCache) : IMemoryCacheManager
+    public class MemoryCacheManager(
+        IMemoryCache memoryCache,
+        IAppConfigurationManager appConfigurationManager) : IMemoryCacheManager
     {
         private readonly IMemoryCache _memoryCache = memoryCache;
+        private readonly IAppConfigurationManager _appConfigurationManager = appConfigurationManager;
 
         public T? Add<T>(string key, T value, DateTimeOffset expiresAt)
         {
@@ -43,5 +48,7 @@ namespace LoteTablas.Infrastructure.Cache.Managers
             return JsonSerializer.Deserialize<T>(serializedValue);
         }
 
+        public int GetCacheDuration() =>
+            int.Parse(_appConfigurationManager.GetValue(EnvironmentVariableNames.CACHE_DURATION, "5"));
     }
 }

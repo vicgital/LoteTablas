@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Application\LoteTablas.Application.Contracts\LoteTablas.Application.Contracts.csproj" />
+    <ProjectReference Include="..\LoteTablas.Infrastructure.Configuration\LoteTablas.Infrastructure.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,6 +15,7 @@
 		<Protobuf Include="protos\lottery.proto" GrpcServices="Both" ProtoRoot="protos" />
 		<Protobuf Include="protos\card.proto" GrpcServices="Both" ProtoRoot="protos" />
 		<Protobuf Include="protos\board.proto" GrpcServices="Both" ProtoRoot="protos" />
+		<Protobuf Include="protos\document.proto" GrpcServices="Both" ProtoRoot="protos" />
 	</ItemGroup>
 
 </Project>

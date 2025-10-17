@@ -13,21 +13,19 @@ service Card {
 }
 
 message GetCardRequest {
-	int32 cardID = 1;
+	string cardId = 1;
 }
 
 message CardModel {
-  int32 cardID = 1;
+  string cardId = 1;
   string name = 2;
   string description = 3;
-  string imageSmallPath = 4;
-  string imageMediumPath = 5;
-  string imageBigPath = 6;
-  int32 creatorUserID = 7;
+  string imagePath = 4;
+  string creatorUserId = 5;
 }
 
 message GetCardsRequest {
-	repeated int32 cardIDs = 1;
+	repeated string cardIds = 1;
 }
 
 message CardsReply {

@@ -1,32 +1,32 @@
-﻿using LoteTablas.Application.Contracts.Configuration;
-using Microsoft.Data.SqlClient;
+﻿using LoteTablas.Infrastructure.Configuration.Constants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Data;
+using MongoDB.Driver;
 
 namespace LoteTablas.Infrastructure.Database.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        /// <summary>
-        /// Adds a scoped IDbConnection service to the IServiceCollection. 
-        /// </summary>
-        /// <param name="services"></param>
-        /// <param name="configuration"></param>
-        /// <returns></returns>
-        public static IServiceCollection AddLoteTablasSqlDatabaseConnection(
-        this IServiceCollection services,
-        IAppConfigurationManager appConfigurationManager)
-        {
-            // Register IDbConnection as a scoped service.
-            // A new connection will be created for each (or gRPC call).
-            services.AddScoped<IDbConnection>(sp =>
-            {
-                var connectionString = appConfigurationManager.GetValue("LOTETABLAS_DB_CONNECTION_STRING");
-                return new SqlConnection(connectionString);
-            });
 
+        public static IServiceCollection AddLoteTablasMongoDatabaseConnection(
+            this IServiceCollection services,
+            IConfiguration config)
+        {
+
+            var mongoConnectionString = config[EnvironmentVariableNames.LOTETABLAS_MONGODB_CONNECTION_STRING] ?? throw new ArgumentException($"{EnvironmentVariableNames.LOTETABLAS_MONGODB_CONNECTION_STRING} was not found in App Configuration");
+
+            var settings = MongoClientSettings.FromConnectionString(mongoConnectionString);
+            // Set the ServerApi field of the settings object to set the version of the Stable API on the client
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+
+            // Register IMongoClient as a singleton service.
+            services.AddScoped<IMongoDatabase>(sp =>
+            {
+                var client = new MongoClient(settings);
+                return client.GetDatabase("lotetablas");
+            });
             return services;
         }
+
     }
 }

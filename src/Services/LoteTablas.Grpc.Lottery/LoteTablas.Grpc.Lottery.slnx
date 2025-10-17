@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/dependencies/">
+    <Project Path="../../Shared/Application/LoteTablas.Application.Contracts/LoteTablas.Application.Contracts.csproj" />
+    <Project Path="../../Shared/Grpc/LoteTablas.Grpc.Definitions/LoteTablas.Grpc.Definitions.csproj" />
+    <Project Path="../../Shared/Infrastructure/LoteTablas.Infrastructure.Cache/LoteTablas.Infrastructure.Cache.csproj" />
+    <Project Path="../../Shared/Infrastructure/LoteTablas.Infrastructure.Configuration/LoteTablas.Infrastructure.Configuration.csproj" />
+    <Project Path="../../Shared/Infrastructure/LoteTablas.Infrastructure.Database/LoteTablas.Infrastructure.Database.csproj" />
+    <Project Path="../../Shared/Infrastructure/LoteTablas.Infrastructure.Logging/LoteTablas.Infrastructure.Logging.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="LoteTablas.Grpc.Lottery.Application/LoteTablas.Grpc.Lottery.Application.csproj" />
+    <Project Path="LoteTablas.Grpc.Lottery.Domain/LoteTablas.Grpc.Lottery.Domain.csproj" />
+    <Project Path="LoteTablas.Grpc.Lottery.Infrastructure/LoteTablas.Grpc.Lottery.Infrastructure.csproj" />
+    <Project Path="LoteTablas.Grpc.Lottery.Service/LoteTablas.Grpc.Lottery.Service.csproj" />
+  </Folder>
+</Solution>
