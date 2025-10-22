@@ -3,6 +3,5 @@ using MediatR;
 
 namespace LoteTablas.Grpc.Board.Application.Features.BoardDocument.Requests
 {
-    public record GetBoardDocumentRequest(BoardDocumentRequestDto BoardDocument) : IRequest<byte[]>;
-
+    public record GetBoardDocumentsRequest(List<BoardDocumentRequestDto> BoardDocuments) : IRequest<byte[]>;
 }

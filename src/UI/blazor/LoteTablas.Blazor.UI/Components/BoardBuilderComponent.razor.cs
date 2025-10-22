@@ -1,5 +1,5 @@
 ﻿using BlazorBootstrap;
-using LoteTablas.Blazor.UI.Models;
+using LoteTablas.Blazor.UI.ViewModels;
 using Microsoft.AspNetCore.Components;
 
 namespace LoteTablas.Blazor.UI.Components

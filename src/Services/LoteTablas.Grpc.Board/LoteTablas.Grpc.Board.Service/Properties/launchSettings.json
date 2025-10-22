@@ -1,22 +1,16 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "http": {
+    "local": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:5099",
+      "applicationUrl": "http://localhost:50051",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "https": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "https://localhost:7018;http://localhost:5099",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "prod",
+        "LOTETABLAS_MONGODB_CONNECTION_STRING": "mongodb+srv://svc_lotetablas:zf4LwiYpNXxwUR6e@lotetablas-prod.s6yxkou.mongodb.net/?retryWrites=true&w=majority&appName=lotetablas-prod",
+        "AUTOMAPPER_LICENSE_KEY": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ikx1Y2t5UGVubnlTb2Z0d2FyZUxpY2Vuc2VLZXkvYmJiMTNhY2I1OTkwNGQ4OWI0Y2IxYzg1ZjA4OGNjZjkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2x1Y2t5cGVubnlzb2Z0d2FyZS5jb20iLCJhdWQiOiJMdWNreVBlbm55U29mdHdhcmUiLCJleHAiOiIxNzkxNTkwNDAwIiwiaWF0IjoiMTc2MDExNTk2NyIsImFjY291bnRfaWQiOiIwMTk5Y2YxNWE5MTM3YmJkOGY1NzcxNGNmZjU0MmViNiIsImN1c3RvbWVyX2lkIjoiY3RtXzAxazc3aGNodnFrMXpkazg1ZWEzcGY0cHFoIiwic3ViX2lkIjoiLSIsImVkaXRpb24iOiIwIiwidHlwZSI6IjIifQ.vFsZ1QuGfc288VoqnROf7zGkP7ydR7m8ot9R01Dw5lQisFFlUbrG7Yuq7sIh4Y17OXvrPDtxJudWlICNJNplgBScbC6Td0HM0yr48SMUXkFCBXeyZKuqplAAxUIHdAZlw9BF3xzQ1T5xqIaSCH2Tu2MCsYa07FRvb_V3kMeSrFJDboIjaqQHkBDAl8MKLipXtwenF29CFqHOhwSeIoIZopQbGS3rbmWZCtiRHkU8ubDbgXOw5761Zihci1lwFTLof9bb_YlTtm0l-s9Vuv6BK2KsKhNnA1WBNi1m3c_FmolwviOBRn6FUo_S2uuqxtJyBwXyAVc0vRMcyeCbKlYqNg",
+        "MEDIATR_LICENSE_KEY": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ikx1Y2t5UGVubnlTb2Z0d2FyZUxpY2Vuc2VLZXkvYmJiMTNhY2I1OTkwNGQ4OWI0Y2IxYzg1ZjA4OGNjZjkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2x1Y2t5cGVubnlzb2Z0d2FyZS5jb20iLCJhdWQiOiJMdWNreVBlbm55U29mdHdhcmUiLCJleHAiOiIxNzkxNTkwNDAwIiwiaWF0IjoiMTc2MDExNTk2NyIsImFjY291bnRfaWQiOiIwMTk5Y2YxNWE5MTM3YmJkOGY1NzcxNGNmZjU0MmViNiIsImN1c3RvbWVyX2lkIjoiY3RtXzAxazc3aGNodnFrMXpkazg1ZWEzcGY0cHFoIiwic3ViX2lkIjoiLSIsImVkaXRpb24iOiIwIiwidHlwZSI6IjIifQ.vFsZ1QuGfc288VoqnROf7zGkP7ydR7m8ot9R01Dw5lQisFFlUbrG7Yuq7sIh4Y17OXvrPDtxJudWlICNJNplgBScbC6Td0HM0yr48SMUXkFCBXeyZKuqplAAxUIHdAZlw9BF3xzQ1T5xqIaSCH2Tu2MCsYa07FRvb_V3kMeSrFJDboIjaqQHkBDAl8MKLipXtwenF29CFqHOhwSeIoIZopQbGS3rbmWZCtiRHkU8ubDbgXOw5761Zihci1lwFTLof9bb_YlTtm0l-s9Vuv6BK2KsKhNnA1WBNi1m3c_FmolwviOBRn6FUo_S2uuqxtJyBwXyAVc0vRMcyeCbKlYqNg",
+        "STORAGE_ACCOUNT_BASE_URL": "https://stlotetablas.blob.core.windows.net",
+        "FILE_STREAM_CHUNK_SIZE": "1048576"
       }
     }
   }

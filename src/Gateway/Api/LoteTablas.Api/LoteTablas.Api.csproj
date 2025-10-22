@@ -17,7 +17,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\LoteTablas.Api.Business\LoteTablas.Api.Business.csproj" />
+		<ProjectReference Include="..\LoteTablas.Api.Application\LoteTablas.Api.Application.csproj" />
+		<ProjectReference Include="..\LoteTablas.Api.Infrastructure\LoteTablas.Api.Infrastructure.csproj" />
 	</ItemGroup>
 
 </Project>

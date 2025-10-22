@@ -22,13 +22,13 @@
                         if (lotteryCard.CardID == CurrentBoard.DoubleCardId)
                         {
                             <td class="board-cell board-cell-md board-cell-double">
-                                <img src="@(lotteryCard.ImageSmallPath)" />
+                                <img src="@(lotteryCard.ImagePath)" />
                             </td>
                         }
                         else
                         {
                             <td class="board-cell board-cell-md" @onclick="() => ShowSelectCardModal(ordinal)">
-                                <img src="@(lotteryCard.ImageSmallPath)" />
+                                <img src="@(lotteryCard.ImagePath)" />
                             </td>
                         }
                     }

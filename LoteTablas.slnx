@@ -3,14 +3,20 @@
   <Folder Name="/src/" />
   <Folder Name="/src/1. UI/" />
   <Folder Name="/src/1. UI/blazor/">
+    <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Application/LoteTablas.Blazor.UI.Application.csproj" Id="2d247d85-7c87-49c6-8c5e-1b1a3c3f1a87" />
     <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Data/LoteTablas.Blazor.UI.Data.csproj" />
+    <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Domain/LoteTablas.Blazor.UI.Domain.csproj" Id="2da22a0a-5e8c-44e2-b6fb-800f5812e632" />
+    <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Infrastructure/LoteTablas.Blazor.UI.Infrastructure.csproj" Id="7c330a5b-c900-47e3-8500-9e019f008a38" />
     <Project Path="src/UI/blazor/LoteTablas.Blazor.UI.Models/LoteTablas.Blazor.UI.Models.csproj" />
     <Project Path="src/UI/blazor/LoteTablas.Blazor.UI/LoteTablas.Blazor.UI.csproj" />
   </Folder>
   <Folder Name="/src/2. Gateway/" />
   <Folder Name="/src/2. Gateway/Api/">
+    <Project Path="src/Gateway/Api/LoteTablas.Api.Application/LoteTablas.Api.Application.csproj" Id="109c1a5f-f2ad-44e4-b107-d4fa9ee9ddba" />
     <Project Path="src/Gateway/Api/LoteTablas.Api.Business/LoteTablas.Api.Business.csproj" />
     <Project Path="src/Gateway/Api/LoteTablas.Api.Data/LoteTablas.Api.Data.csproj" />
+    <Project Path="src/Gateway/Api/LoteTablas.Api.Domain/LoteTablas.Api.Domain.csproj" Id="a7f12e82-0b82-446a-b9dc-ca45ce71232d" />
+    <Project Path="src/Gateway/Api/LoteTablas.Api.Infrastructure/LoteTablas.Api.Infrastructure.csproj" Id="12aab204-1dba-4d90-9eb6-95d10777b15f" />
     <Project Path="src/Gateway/Api/LoteTablas.Api.Models/LoteTablas.Api.Models.csproj" />
     <Project Path="src/Gateway/Api/LoteTablas.Api/LoteTablas.Api.csproj" />
   </Folder>

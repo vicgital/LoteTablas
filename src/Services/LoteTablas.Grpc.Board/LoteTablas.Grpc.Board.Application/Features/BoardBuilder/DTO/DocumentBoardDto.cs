@@ -2,6 +2,6 @@
 {
     public class DocumentBoardDto
     {
-        public List<DocumentBoardCardDto> BoardCards { get; set; } = new();
+        public List<DocumentBoardCardDto> BoardCards { get; set; } = [];
     }
 }

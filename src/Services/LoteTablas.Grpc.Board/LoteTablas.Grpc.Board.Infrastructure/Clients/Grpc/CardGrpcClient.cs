@@ -13,11 +13,12 @@ namespace LoteTablas.Grpc.Board.Infrastructure.Clients.Grpc
 
             var reply = await _cardClient.GetCardsAsync(request);
 
-            return reply.Cards.Select(c => new Domain.Entities.Card
+            return [.. reply.Cards.Select(c => new Domain.Entities.Card
             {
+                CardId = c.CardId,
                 Name = c.Name,
                 ImagePath = c.ImagePath
-            }).ToList();
+            })];
 
 
 

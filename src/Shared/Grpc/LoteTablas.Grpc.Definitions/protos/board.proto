@@ -75,7 +75,7 @@ message BoardDocumentModel {
 }
 
 message BoardDocumentCardModel {
-	int32 cardId = 1;
+	string cardId = 1;
 	int32 ordinal = 2;
 }
 
