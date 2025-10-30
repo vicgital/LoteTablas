@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LoteTablas.Api.Application\LoteTablas.Api.Application.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Shared\Grpc\LoteTablas.Grpc.Definitions\LoteTablas.Grpc.Definitions.csproj" />
+		<ProjectReference Include="..\LoteTablas.Api.Application\LoteTablas.Api.Application.csproj" />
+	</ItemGroup>
 
 </Project>

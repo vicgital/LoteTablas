@@ -38,16 +38,8 @@ static void AddApiRepositories(WebAssemblyHostBuilder builder, IConfigurationRoo
     });
 
 
-    if (isTest)
-    {
-        builder.Services.AddScoped<ILotteryRepository, LoteTablas.Blazor.UI.Data.Repositories.Implementation.Test.LotteryRepository>();
-        builder.Services.AddScoped<IBoardRepository, LoteTablas.Blazor.UI.Data.Repositories.Implementation.Test.BoardRepository>();
-    }
-    else
-    {
-        builder.Services.AddScoped<ILotteryRepository, LotteryRepository>();
-        builder.Services.AddScoped<IBoardRepository, BoardRepository>();
-    }
+    builder.Services.AddScoped<ILotteryRepository, LotteryRepository>();
+    builder.Services.AddScoped<IBoardRepository, BoardRepository>();
 }
 
 static void ConfigureAnimations(WebAssemblyHostBuilder builder)

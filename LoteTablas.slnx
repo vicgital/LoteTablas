@@ -1,5 +1,14 @@
 <Solution>
   <Folder Name="/aspire/" />
+  <Folder Name="/aspire/main/">
+    <Project Path="src/Aspire/LoteTablas.Aspire.AppHost/LoteTablas.Aspire.AppHost.csproj" Id="10645110-d02a-4937-8eb8-c0dcd145cd8b" />
+  </Folder>
+  <Folder Name="/aspire/poc/">
+    <Project Path="src/Aspire/Test/AspireApp1/AspireApp1.ApiService/AspireApp1.ApiService.csproj" />
+    <Project Path="src/Aspire/Test/AspireApp1/AspireApp1.AppHost/AspireApp1.AppHost.csproj" Id="278098c0-9876-43e8-8fd0-5e62b67a5519" />
+    <Project Path="src/Aspire/Test/AspireApp1/AspireApp1.ServiceDefaults/AspireApp1.ServiceDefaults.csproj" />
+    <Project Path="src/Aspire/Test/AspireApp1/AspireApp1.Web/AspireApp1.Web.csproj" />
+  </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/1. UI/" />
   <Folder Name="/src/1. UI/blazor/">
@@ -13,11 +22,8 @@
   <Folder Name="/src/2. Gateway/" />
   <Folder Name="/src/2. Gateway/Api/">
     <Project Path="src/Gateway/Api/LoteTablas.Api.Application/LoteTablas.Api.Application.csproj" Id="109c1a5f-f2ad-44e4-b107-d4fa9ee9ddba" />
-    <Project Path="src/Gateway/Api/LoteTablas.Api.Business/LoteTablas.Api.Business.csproj" />
-    <Project Path="src/Gateway/Api/LoteTablas.Api.Data/LoteTablas.Api.Data.csproj" />
     <Project Path="src/Gateway/Api/LoteTablas.Api.Domain/LoteTablas.Api.Domain.csproj" Id="a7f12e82-0b82-446a-b9dc-ca45ce71232d" />
     <Project Path="src/Gateway/Api/LoteTablas.Api.Infrastructure/LoteTablas.Api.Infrastructure.csproj" Id="12aab204-1dba-4d90-9eb6-95d10777b15f" />
-    <Project Path="src/Gateway/Api/LoteTablas.Api.Models/LoteTablas.Api.Models.csproj" />
     <Project Path="src/Gateway/Api/LoteTablas.Api/LoteTablas.Api.csproj" />
   </Folder>
   <Folder Name="/src/3. Services/" />

@@ -1,14 +1,17 @@
 ﻿using Grpc.Net.Client;
+using LoteTablas.Api.Application.Contracts.Clients.Grpc;
+using LoteTablas.Api.Application.Features.Board.Requests;
 using LoteTablas.Api.AutoMapper;
-using LoteTablas.Api.Business.Components.Definition;
-using LoteTablas.Api.Business.Components.Implementation;
-using LoteTablas.Api.Data.Repositories.Definition;
-using LoteTablas.Api.Data.Repositories.Implementation;
-using LoteTablas.Framework.Common;
+using LoteTablas.Api.Infrastructure.Clients.Grpc;
+using LoteTablas.Infrastructure.Configuration.Constants;
+using LoteTablas.Infrastructure.Configuration.Extensions;
+using LoteTablas.Infrastructure.Configuration.Helpers;
+using LoteTablas.Infrastructure.Logging.Extensions;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpOverrides;
 using Serilog;
-using static LoteTablas.Core.Service.Definition.Core;
+using static LoteTablas.Grpc.Definitions.Board;
+using static LoteTablas.Grpc.Definitions.Lottery;
 
 namespace LoteTablas.Api;
 
@@ -16,50 +19,57 @@ public class Startup
 {
 
     /// <summary>
-    /// Configuration
-    /// </summary>
-    public IConfiguration Configuration { get; }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="env">IWebHostEnvironment</param>
-    public Startup()
-    {
-        Configuration = StartupHelper.GetConfiguration();
-    }
-
-    /// <summary>
     /// This method gets called by the runtime. Use this method to add services to the container.
     /// </summary>
     /// <param name="services">IServiceCollection</param>
     public void ConfigureServices(IServiceCollection services)
     {
+
+        var config = ConfigurationHelper.GetConfiguration();
+
         services.AddControllers();
 
+        services.AddConfigurationManager(config);
 
-        // Add Components and Repositories
-        services
-        .AddSingleton(Configuration)
-        .AddSerilogLogging(Configuration)
-        .AddAutoMapper(typeof(MappingProfile))
+        // Add Logging
+        services.AddSerilogLogging(config);
 
-        .AddSingleton<IBoardComponent, BoardComponent>()
-        .AddSingleton<ICardComponent, CardComponent>()
-        .AddSingleton<ILotteryComponent, LotteryComponent>()
+        // Add MediatR
+        services.AddMediatR(cfg =>
+        {
+            var assebly = typeof(GetBoardDocumentsRequest).Assembly;
+            cfg.LicenseKey = Environment.GetEnvironmentVariable(EnvironmentVariableNames.MEDIATR_LICENSE_KEY);
+            cfg.RegisterServicesFromAssembly(assebly);
+        });
 
-        .AddSingleton<IBoardRepository, BoardRepository>()
-        .AddSingleton<ICardRepository, CardRepository>()
-        .AddSingleton<ILotteryRepository, LotteryRepository>()
 
-        .AddSingleton<CoreClient>(new CoreClient(GrpcChannel.ForAddress(Environment.GetEnvironmentVariable("GRPC_CORE_SERVICE_URL") ?? throw new Exception("GRPC_CORE_SERVICE_URL NOT FOUND AS ENVIRONMENT VARIABLE"))))
+        // Add AutoMapper
+        services.AddAutoMapper(config =>
+        {
+            config.LicenseKey = Environment.GetEnvironmentVariable(EnvironmentVariableNames.AUTOMAPPER_LICENSE_KEY);
+        }, typeof(MappingProfile));
 
-        //.AddGrpcUpstreams(configuration, new()
-        //{
-        //    ["core"] = typeof(CoreClient),
-        //})
 
-        .Configure<FormOptions>(options =>
+        // Add Grpc Dependencies
+        var boardServiceGrpcUrl = Environment.GetEnvironmentVariable(EnvironmentVariableNames.BOARD_SERVICE_GRPC_URL) ?? throw new Exception($"{EnvironmentVariableNames.BOARD_SERVICE_GRPC_URL} NOT FOUND AS ENVIRONMENT VARIABLE");
+        services.AddSingleton(new BoardClient(
+            GrpcChannel.ForAddress(
+                    boardServiceGrpcUrl
+                )));
+
+
+        var lotteryServiceGrpcUrl = Environment.GetEnvironmentVariable(EnvironmentVariableNames.LOTTERY_SERVICE_GRPC_URL) ?? throw new Exception($"{EnvironmentVariableNames.LOTTERY_SERVICE_GRPC_URL} NOT FOUND AS ENVIRONMENT VARIABLE");
+        services.AddSingleton(new LotteryClient(
+            GrpcChannel.ForAddress(
+                    lotteryServiceGrpcUrl
+                )));
+
+
+        services.AddSingleton<IBoardGrpcClient, BoardGrpcClient>();
+        services.AddSingleton<ILotteryGrpcClient, LotteryGrpcClient>();
+
+
+        services.Configure<FormOptions>(options =>
         {
             options.ValueLengthLimit = int.MaxValue;
             options.MultipartBodyLengthLimit = int.MaxValue;

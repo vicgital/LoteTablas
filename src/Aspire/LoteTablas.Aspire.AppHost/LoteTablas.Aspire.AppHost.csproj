@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.5.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>c7570065-822e-4da6-82a4-f224728ba929</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gateway\Api\LoteTablas.Api\LoteTablas.Api.csproj" />
+    <ProjectReference Include="..\..\Services\LoteTablas.Grpc.Board\LoteTablas.Grpc.Board.Service\LoteTablas.Grpc.Board.Service.csproj" />
+    <ProjectReference Include="..\..\Services\LoteTablas.Grpc.Card\LoteTablas.Grpc.Card.Service\LoteTablas.Grpc.Card.Service.csproj" />
+    <ProjectReference Include="..\..\Services\LoteTablas.Grpc.Document\LoteTablas.Grpc.Document.Service\LoteTablas.Grpc.Document.Service.csproj" />
+    <ProjectReference Include="..\..\Services\LoteTablas.Grpc.Lottery\LoteTablas.Grpc.Lottery.Service\LoteTablas.Grpc.Lottery.Service.csproj" />
+  </ItemGroup>
+
+</Project>

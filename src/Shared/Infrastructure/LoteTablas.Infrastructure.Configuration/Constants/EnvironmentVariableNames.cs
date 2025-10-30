@@ -8,6 +8,10 @@
         public const string MEDIATR_LICENSE_KEY = "MEDIATR_LICENSE_KEY";
         public const string STORAGE_ACCOUNT_BASE_URL = "STORAGE_ACCOUNT_BASE_URL";
 
+
+        public const string BOARD_SERVICE_GRPC_URL = "BOARD_SERVICE_GRPC_URL";
+        public const string LOTTERY_SERVICE_GRPC_URL = "LOTTERY_SERVICE_GRPC_URL";
+
         public const string CARD_SERVICE_GRPC_URL = "CARD_SERVICE_GRPC_URL";
         public const string DOCUMENT_SERVICE_GRPC_URL = "DOCUMENT_SERVICE_GRPC_URL";
     }

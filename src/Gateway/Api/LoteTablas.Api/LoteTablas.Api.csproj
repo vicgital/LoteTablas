@@ -6,10 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <None Include="Startup.cs" />
-	</ItemGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
@@ -17,6 +14,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Configuration\LoteTablas.Infrastructure.Configuration.csproj" />
+		<ProjectReference Include="..\..\..\Shared\Infrastructure\LoteTablas.Infrastructure.Logging\LoteTablas.Infrastructure.Logging.csproj" />
 		<ProjectReference Include="..\LoteTablas.Api.Application\LoteTablas.Api.Application.csproj" />
 		<ProjectReference Include="..\LoteTablas.Api.Infrastructure\LoteTablas.Api.Infrastructure.csproj" />
 	</ItemGroup>

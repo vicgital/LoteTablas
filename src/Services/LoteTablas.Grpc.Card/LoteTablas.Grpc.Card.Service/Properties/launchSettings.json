@@ -3,7 +3,7 @@
   "profiles": {
     "local": {
       "commandName": "Project",
-      "applicationUrl": "http://localhost:50051",
+      //"applicationUrl": "http://localhost:50051",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "prod",
         "LOTETABLAS_MONGODB_CONNECTION_STRING": "mongodb+srv://svc_lotetablas:zf4LwiYpNXxwUR6e@lotetablas-prod.s6yxkou.mongodb.net/?retryWrites=true&w=majority&appName=lotetablas-prod",

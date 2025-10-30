@@ -5,7 +5,7 @@
         @foreach (var card in LotteryCards)
         {
             <div class="img-card">
-                <img src="@(card.ImageSmallPath)" @onclick="() => OnCardSelected.InvokeAsync(card)" />
+                <img src="@(card.ImagePath)" @onclick="() => OnCardSelected.InvokeAsync(card)" />
             </div>
             
         }

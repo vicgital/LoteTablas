@@ -1,5 +1,6 @@
-﻿using LoteTablas.Api.Business.Components.Definition;
-using LoteTablas.Api.Models;
+﻿using LoteTablas.Api.Application.Features.Lottery.Requests;
+using LoteTablas.Api.Domain;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoteTablas.Api.Controllers
@@ -8,82 +9,27 @@ namespace LoteTablas.Api.Controllers
     [Route("v1/lottery")]
     [ApiController]
     public class LotteryController(
-        ILotteryComponent lotteryComponent,
+        IMediator mediator,
         ILogger<LotteryController> logger,
         IConfiguration config) : BaseController<LotteryController>(logger, config)
     {
 
-        private readonly ILotteryComponent _lotteryComponent = lotteryComponent;
-
-        [HttpGet("", Name = "Get")]
-        [ProducesResponseType(typeof(List<LotteryType>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Get()
-        {
-            try
-            {
-                await Task.Delay(0);
-                return Ok(new
-                {
-                    message = "Hello World"
-                });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "GetLotteryTypes()");
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-        }
-
-
-        [HttpGet("types", Name = "GetLotteryTypes")]
-        [ProducesResponseType(typeof(List<LotteryType>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetLotteryTypes()
-        {
-            try
-            {
-                var lotteryTypes = await _lotteryComponent.GetLotteryTypes();
-                return Ok(lotteryTypes);
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "GetLotteryTypes()");
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-        }
-
-
-        [HttpGet("free/list", Name = "GetFreeLotteries")]
-        [ProducesResponseType(typeof(List<Lottery>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetFreeLotteries()
-        {
-            try
-            {
-                var lotteryTypes = await _lotteryComponent.GetFreeLotteries();
-                return Ok(lotteryTypes);
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "GetFreeLotteries()");
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-        }
+        private readonly IMediator _mediator = mediator;
 
 
         [HttpGet("cards/{lotteryId}", Name = "GetLotteryCardsByLotteryID")]
         [ProducesResponseType(typeof(List<LotteryCard>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetLotteryCardsByLotteryID(int lotteryId)
+        public async Task<IActionResult> GetLotteryCardsByLotteryID(string lotteryId)
         {
             try
             {
-                var cards = await _lotteryComponent.GetLotteryCardsByLotteryID(lotteryId);
+                var cards = await _mediator.Send(new GetLotteryCardsByLotteryRequest(lotteryId));
                 return Ok(cards);
 
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "GetFreeLotteries()");
+                _logger.LogError(ex, "GetLotteryCardsByLotteryID()");
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }

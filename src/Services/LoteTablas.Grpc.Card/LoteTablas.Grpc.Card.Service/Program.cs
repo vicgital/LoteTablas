@@ -14,12 +14,12 @@ static class Program
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                webBuilder.ConfigureKestrel(options =>
-                {
-                    // Setup a HTTP/2 endpoint without TLS.
-                    options.ListenAnyIP(50051, o => o.Protocols =
-                        HttpProtocols.Http2);
-                });
+                //webBuilder.ConfigureKestrel(options =>
+                //{
+                //    // Setup a HTTP/2 endpoint without TLS.
+                //    options.ListenAnyIP(50051, o => o.Protocols =
+                //        HttpProtocols.Http2);
+                //});
                 webBuilder.UseStartup<Startup>();
             });
 }
